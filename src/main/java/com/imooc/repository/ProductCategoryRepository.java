@@ -15,7 +15,7 @@ import java.util.List;
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory,Integer> {
 
     /*/*
-     * @功能描述
+     * @功能描述 买家端用到的查询方法——根据商品类目编号进行查询
      *
      * @author Huang
      * @date 2018/7/23 15:25
