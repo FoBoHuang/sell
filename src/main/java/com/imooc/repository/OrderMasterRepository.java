@@ -14,5 +14,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OrderMasterRepository extends JpaRepository<OrderMaster,String> {
 
+    /*/*
+     * @功能描述 根据买家微信openid进行分页查询
+     *
+     * @author Huang
+     * @date 2018/7/25 10:26
+     * @param [buyerOpenid, pageable]
+     * @return org.springframework.data.domain.Page<com.imooc.dataobject.OrderMaster>
+     */
     Page<OrderMaster> findByBuyerOpenid(String buyerOpenid, Pageable pageable);
 }
