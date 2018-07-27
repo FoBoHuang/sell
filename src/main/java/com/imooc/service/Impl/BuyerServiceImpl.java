@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * 买家实现类
+ * 买家订单校验服务层实现类
  *
  * @author Huangfobo
  * @create 2018-07-27 10:34

@@ -3,7 +3,7 @@ package com.imooc.service;
 import com.imooc.dto.OrderDTO;
 
 /**
- * 买家
+ * 买家订单校验服务层
  *
  * @author Huangfobo
  * @create 2018-07-27 10:33
