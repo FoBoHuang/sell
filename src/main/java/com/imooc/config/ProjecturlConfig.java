@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
  * @create 2018-07-28 23:26
  **/
 @Data
-@ConfigurationProperties(prefix = "projectUrl")
+@ConfigurationProperties(prefix = "projecturl")
 @Component
-public class ProjectUrlConfig {
+public class ProjecturlConfig {
 
     /**
      * 微信公众平台授权url

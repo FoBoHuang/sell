@@ -1,6 +1,6 @@
 package com.imooc.controller;
 
-import com.imooc.config.ProjectUrlConfig;
+import com.imooc.config.ProjecturlConfig;
 import com.imooc.enums.ResultEnum;
 import com.imooc.exception.SellException;
 import lombok.extern.slf4j.Slf4j;
@@ -31,13 +31,13 @@ public class WechatController {
     private WxMpService wxMpService;
 
     @Autowired
-    private ProjectUrlConfig projectUrlConfig;
+    private ProjecturlConfig projecturlConfig;
 
     @GetMapping("/authorize")
     public String authorize(@RequestParam("returnUrl") String returnUrl) {
         //1. 配置
         //2. 调用方法
-        String url = projectUrlConfig.getWechatMpAuthorize() + "/sell/wechat/userInfo";
+        String url = projecturlConfig.getWechatMpAuthorize() + "/sell/wechat/userInfo";
         String redirectUrl = wxMpService.oauth2buildAuthorizationUrl(url, WxConsts.OAuth2Scope.SNSAPI_BASE, URLEncoder.encode(returnUrl));
         return "redirect:" + redirectUrl;
     }
