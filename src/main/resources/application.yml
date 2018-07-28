@@ -16,3 +16,15 @@ spring:
 #  file: /var/log/tomcat/sell.log
 #  level:
 #    com.imooc.LoggerTest: debug
+
+wechat:
+  mpAppId: wxd898fcb01713c658
+  mpAppSecret: 47ccc303338cee6e62894fxxxxxxxxxxx
+
+
+projectUrl:
+  wechatMpAuthorize: http://sell.natapp4.cc
+  wechatOpenAuthorize: http://sell.natapp4.cc
+  sell: http://sell.natapp4.cc
+
+
