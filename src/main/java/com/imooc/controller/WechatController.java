@@ -9,6 +9,7 @@ import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.result.WxMpOAuth2AccessToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,7 +23,7 @@ import java.net.URLEncoder;
  * @author Huangfobo
  * @create 2018-07-28 22:25
  **/
-@RestController
+@Controller
 @RequestMapping("/wechat")
 @Slf4j
 public class WechatController {
@@ -33,11 +34,21 @@ public class WechatController {
     @Autowired
     private ProjecturlConfig projecturlConfig;
 
+    /*/*
+     * @功能描述 重定向到userInfo()方法
+     *
+     * @author Huang
+     * @date 2018/7/30 0:23
+     * @param [returnUrl]
+     * @return java.lang.String
+     */
     @GetMapping("/authorize")
     public String authorize(@RequestParam("returnUrl") String returnUrl) {
+
         //1. 配置
         //2. 调用方法
-        String url = projecturlConfig.getWechatMpAuthorize() + "/sell/wechat/userInfo";
+        /*首先构造网页授权url，然后构成超链接让用户点击：*/
+        String url = projecturlConfig.getWechatMpAuthorize() + "/wechat/userInfo";
         String redirectUrl = wxMpService.oauth2buildAuthorizationUrl(url, WxConsts.OAuth2Scope.SNSAPI_BASE, URLEncoder.encode(returnUrl));
         return "redirect:" + redirectUrl;
     }
@@ -45,6 +56,8 @@ public class WechatController {
     @GetMapping("/userInfo")
     public String userInfo(@RequestParam("code") String code,
                            @RequestParam("state") String returnUrl) {
+
+        /*当用户同意授权后，会回调所设置的url并把authorization code传过来，然后用这个code获得access token，其中也包含用户的openid等信息*/
         WxMpOAuth2AccessToken wxMpOAuth2AccessToken = new WxMpOAuth2AccessToken();
         try {
             wxMpOAuth2AccessToken = wxMpService.oauth2getAccessToken(code);
