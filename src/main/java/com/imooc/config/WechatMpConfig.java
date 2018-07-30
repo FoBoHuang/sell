@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 /**
- * 微信公众号配置类
+ * 微信公众号扫码登陆配置类
  *
  * @author Huangfobo
  * @create 2018-07-28 22:31
