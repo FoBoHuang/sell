@@ -45,6 +45,7 @@ public class PayController {
         //2. 发起支付
         PayResponse payResponse = payService.create(orderDTO);
 
+        /*把参数注入到模板里面*/
         map.put("payResponse", payResponse);
         map.put("returnUrl", returnUrl);
 
