@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.net.URLEncoder;
 
 /**
- * 微信客户端的控制层
+ * 微信公众号授权
  *
  * @author Huangfobo
  * @create 2018-07-28 22:25

@@ -19,8 +19,8 @@ spring:
 #    com.imooc.LoggerTest: debug
 
 wechat:
-  mpAppId: wxd898fcb01713c658
-  mpAppSecret: 47ccc303338cee6e62894fxxxxxxxxxxx
+  mpAppId: wx3f87911f12394d2a
+  mpAppSecret: 9c51adc8c71a46729a260c2ac202f4d2
   openAppId: wx6ad144e54af67d87
   openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
   mchId: 1483469312
@@ -37,4 +37,4 @@ projecturl:
   wechatOpenAuthorize: http://127.0.0.1:8080
   sell: http://127.0.0.1:8080
 
-
+#我的微信测试号的openid为：o0bNa0ytAlYCkkm28I5tiLRc9iHE
