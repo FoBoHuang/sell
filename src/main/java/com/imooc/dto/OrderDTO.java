@@ -56,15 +56,15 @@ public class OrderDTO {
 
     List<OrderDetail> orderDetailList;
 
+    /*返回枚举类型*/
     @JsonIgnore
     public OrderStatusEnum getOrderStatusEnum() {
-
         return EnumUtil.getByCode(orderStatus, OrderStatusEnum.class);
     }
 
+    /*返回枚举类型*/
     @JsonIgnore
     public PayStatusEnum getPayStatusEnum() {
-
         return EnumUtil.getByCode(payStatus, PayStatusEnum.class);
     }
 }
