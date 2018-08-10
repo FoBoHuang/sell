@@ -39,6 +39,7 @@
                             <select name="categoryType" class="form-control">
                                 <#list categoryList as category>
                                     <option value="${category.categoryType}"
+                                            <#--满足条件才呈现当前选中的状态-->
                                             <#if (productInfo.categoryType)?? && productInfo.categoryType == category.categoryType>
                                                 selected
                                             </#if>
@@ -46,6 +47,7 @@
                                     </option>
                                 </#list>
                             </select>
+                        <#--隐藏字段，不在前端页面中显示，但是要传到数据库中去-->
                         </div>
                         <input hidden type="text" name="productId" value="${(productInfo.productId)!''}">
                         <button type="submit" class="btn btn-default">提交</button>
