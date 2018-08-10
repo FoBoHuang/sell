@@ -85,10 +85,11 @@ public class SellerCategoryController {
 
         ProductCategory productCategory = new ProductCategory();
         try {
+            /*根据表单对象的categoryId字段是否为空来判断是新增还是修改*/
             if (form.getCategoryId() != null) {
                 productCategory = categoryService.findOne(form.getCategoryId());
             }
-
+            /*将修改的字段拷贝到productCategory*/
             BeanUtils.copyProperties(form, productCategory);
             categoryService.save(productCategory);
         } catch (SellException e) {
