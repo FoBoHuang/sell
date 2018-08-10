@@ -53,6 +53,7 @@ public class SellerCategoryController {
      * @return
      */
     @GetMapping("/index")
+    /*设categoryId为非必需是为了有两种链接跳转*/
     public ModelAndView index(@RequestParam(value = "categoryId", required = false) Integer categoryId,
                               Map<String, Object> map) {
 
