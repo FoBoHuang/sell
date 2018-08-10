@@ -5,8 +5,10 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 /**
+ * 商品表单
+ *
  * @author Huangfobo
- * @create 2018-08-10 11:02
+ * @create 2018-08-10 21:11
  **/
 @Data
 public class ProductForm {
