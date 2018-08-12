@@ -54,11 +54,10 @@ public class SellerUserController {
         }
 
         //2. 设置token至redis
-        /**/
         String token = UUID.randomUUID().toString();
         /*过期时间*/
         Integer expire = RedisConstant.EXPIRE;
-
+        /*以key-value值的形式设置进redis*/
         redisTemplate.opsForValue().set(String.format(RedisConstant.TOKEN_PREFIX, token), openid, expire, TimeUnit.SECONDS);
 
         //3. 设置token至cookie
