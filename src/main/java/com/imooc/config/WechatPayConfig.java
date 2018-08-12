@@ -18,7 +18,7 @@ public class WechatPayConfig {
     @Autowired
     private WechatAccountConfig wechatAccountConfig;
 
-//    对BestPayServiceImpl这个类进行配置
+    /*对BestPayServiceImpl这个类进行配置*/
     @Bean
     public BestPayServiceImpl bestPayService() {
         BestPayServiceImpl bestPayService = new BestPayServiceImpl();
