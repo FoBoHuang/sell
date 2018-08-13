@@ -18,7 +18,8 @@ public class SellExceptionHandler {
     private ProjecturlConfig projecturlConfig;
 
     //拦截登录异常
-    /*http://127.0.0.1:8080/wechat/qrAuthorize?returnUrl=http://sell.natapp4.cc/sell/seller/login*/
+    /*http://127.0.0.1:8080/wechat/qrAuthorize?returnUrl=http://127.0.0.1:8080/seller/login*/
+    /*统一处理了SellerAuthorizeException这一类的异常*/
     @ExceptionHandler(value = SellerAuthorizeException.class)
     public ModelAndView handlerAuthorizeException() {
         return new ModelAndView("redirect:"
